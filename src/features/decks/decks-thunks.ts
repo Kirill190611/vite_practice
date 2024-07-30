@@ -11,11 +11,9 @@ export const fetchDecksTC = () => {
     }
 }
 
-export const addNewDeckTC = (params: AddDeckParams) => {
-    return (dispatch: Dispatch) => {
-        decksAPI.addDeck(params)
+export const addNewDeckTC = (params: AddDeckParams) => async (dispatch: Dispatch) => {
+        return decksAPI.addDeck(params)
             .then(res => {
                 dispatch(addDecksAC(res.data))
             })
     }
-}
