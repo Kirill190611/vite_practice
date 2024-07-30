@@ -11,10 +11,17 @@ export const instance = axios.create({
 export const decksAPI = {
   fetchDecks() {
     return instance.get<FetchDecksResponse>('v2/decks')
-  }
+  },
+  addDeck(params: AddDeckParams) {
+    return instance.post<Deck>('v1/decks', params)
+  },
 }
 
 //types
+
+export type AddDeckParams = {
+  name: string,
+}
 
 export type FetchDecksResponse = {
   items: Deck[]
