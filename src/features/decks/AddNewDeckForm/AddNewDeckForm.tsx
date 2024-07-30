@@ -1,7 +1,7 @@
 import s from './AddNewPostForm.module.css'
 import {useForm} from 'react-hook-form'
 import {addNewDeckTC} from "../decks-thunks.ts";
-import {useAppDispatch, useAppSelector} from "../../../app/store.ts";
+import {useAppDispatch} from "../../../app/store.ts";
 
 type FormValues = {
     name: string
